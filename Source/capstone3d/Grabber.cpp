@@ -39,6 +39,7 @@ void UGrabber::FindPhysicsHandle() {
 }
 
 void UGrabber::Grab() {
+	UE_LOG(LogTemp, Warning, TEXT("Grab Pressed"));
 
 	FVector PlayerViewPointLocation;
 	FRotator PlayerViewPointRotation;
@@ -81,8 +82,6 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	if (PhysicsHandle->GrabbedComponent) {
 		PhysicsHandle->SetTargetLocation(LineTraceEnd);
 	}
-
-	DrawDebugLine(GetWorld(),PlayerViewPointLocation, LineTraceEnd, FColor(0,255,0), false, 0.f, 0, 5.f);
 
 }
 
